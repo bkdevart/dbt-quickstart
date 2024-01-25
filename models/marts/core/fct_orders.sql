@@ -9,9 +9,9 @@ payments as (
 )
 
 select
-    orderid,
+    order_id,
     customer_id,
     amount
 from customers 
     left join payments on
-        customers.customer_id = payments.id
+        customers.customer_id = payments.payment_id
