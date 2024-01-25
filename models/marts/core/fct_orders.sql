@@ -8,7 +8,6 @@ payments as (
     select * from {{ ref('stg_payments') }}
 )
 
-
 select
     orderid,
     customer_id,
