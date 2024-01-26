@@ -6,7 +6,7 @@ with payments as (
     paymentmethod as payment_method,
     status,
 
-    -- amount is stored in cents, convert it to dollars
+    -- convert cents to dollars
     amount / 100 as amount,
     created as created_at
 
