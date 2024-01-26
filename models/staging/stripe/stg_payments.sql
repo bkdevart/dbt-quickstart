@@ -1,4 +1,10 @@
-with payments as (
+with source as (
+
+    select * from {{ source('stripe', 'payment') }}
+
+),
+
+staged as (
     
     select
     id as payment_id,
@@ -10,7 +16,7 @@ with payments as (
     amount / 100 as amount,
     created as created_at
 
-    from `dbt-tutorial`.stripe.payment
+    from source
 )
 
-select * from payments
+select * from staged
